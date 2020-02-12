@@ -14,7 +14,7 @@ class DatasekolahController extends Controller
      */
     public function index()
     {
-        //
+        return view('page/semuasekolah');
     }
 
     /**

@@ -20,7 +20,8 @@
     =========================================================
     * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 -->
-<link href="{{url('/main.css')}}" rel="stylesheet"></head>
+<link href="{{asset('main.css')}}" rel="stylesheet">
+</head>
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
         <div class="app-header header-shadow">
@@ -120,7 +121,7 @@
                         <ul class="vertical-nav-menu">
                             <li class="app-sidebar__heading">Dashboards</li>
                             <li>
-                                <a href="index.html" class="mm-active">
+                                <a href="{{url('/')}}" class="{{ (request()->segment(1) == '') ? 'mm-active' : '' }}">
                                     <i class="metismenu-icon pe-7s-home"></i>
                                     Dashboard
                                 </a>
@@ -134,7 +135,7 @@
                                 </a>
                                 <ul>
                                     <li>
-                                        <a href="{{url('/datasekolah')}}" class="mm-active">
+                                        <a href="{{url('/datasekolah')}}" class="{{ (request()->segment(1) == 'datasekolah') ? 'mm-active' : '' }}">
                                             <i class="metismenu-icon"></i>
                                             Semua Sekolah
                                         </a>
@@ -235,5 +236,23 @@
 
             @yield('container')  
             
-            <script type="text/javascript" src="./assets/scripts/main.js"></script></body>
-            </html>
+            <script type="text/javascript" src="{{url('/assets/scripts/main.js')}}"></script>
+            <!-- DataTables -->
+            <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+            <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+            <script>
+              $(function () {
+                $('#example1').DataTable()
+                $('#example2').DataTable({
+                  'paging'      : true,
+                  'lengthChange': false,
+                  'searching'   : false,
+                  'ordering'    : true,
+                  'info'        : true,
+                  'autoWidth'   : false
+              })
+            })
+        </script>
+    </body>
+    </html>
