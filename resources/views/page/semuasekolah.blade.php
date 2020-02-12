@@ -18,7 +18,7 @@
                 </div> 
                 <div class="page-title-actions">
                     <div class="d-inline-block dropdown">
-                        <button type="button" class="btn-shadow btn btn-info" data-toggle="modal" data-target="#tambahdatasekolah">Tambah Data Sekolah</button>
+                        <button type="button" class="btn-shadow btn btn-info" data-toggle="modal" data-target="#tambahdatasekolah"><i class="fa fa-plus"></i> Data Sekolah</button>
                     </div>
                 </div>   
             </div>
@@ -119,7 +119,7 @@
                     @csrf
                     <div class="position-relative form-group">
                         <label class="">NPSN</label>
-                        <input name="npsn" type="number" placeholder="Masukkan NPSN" class="form-control" required="required">
+                        <input name="npsn" type="number" placeholder="Masukkan NPSN (Nomor Pokok Sekolah Nasional)" class="form-control" required="required">
                     </div>
                     <div class="position-relative form-group">
                         <label class="">Nama Sekolah</label>
