@@ -1,4 +1,5 @@
-@extends('../layout/main');
+@extends('../layout/main')
+@section('title', 'Home | Aplikasi Data PTK')
 @section('container')
 <div class="app-main__outer">
     <div class="app-main__inner">
