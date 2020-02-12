@@ -8,7 +8,7 @@
             <div class="page-title-wrapper">
                 <div class="page-title-heading">
                     <div class="page-title-icon">
-                        <i class="pe-7s-home icon-gradient bg-mean-fruit">
+                        <i class="pe-7s-study icon-gradient bg-mean-fruit">
                         </i>
                     </div>
                     <div>Data Sekolah
@@ -24,6 +24,15 @@
             </div>
         </div>
 
+        @if (session('status'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Berhasil!</strong> {{session('status')}}.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        @endif
+
         <!-- Table -->
         <div class="row">
             <div class="col-md-12">
@@ -34,64 +43,30 @@
                             <table id="example1" class="table table-striped table-bordered data">
                                 <thead>
                                     <tr>            
-                                        <th>Nama</th>
+                                        <th>No</th>
+                                        <th>NPSN</th>
+                                        <th>Nama Sekolah</th>
                                         <th>Alamat</th>
-                                        <th>Pekerjaan</th>
-                                        <th>Usia</th>
+                                        <th>Jenjang</th>
                                         <th>Status</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach($datasekolah as $datas)
                                     <tr>                
-                                        <td>Andi</td>
-                                        <td>Jakarta</td>
-                                        <td>Web Designer</td>
-                                        <td>21</td>
+                                        <td>{{$loop->iteration}}</td>
+                                        <td>{{$datas->npsn}}</td>
+                                        <td>{{$datas->nama_sekolah}}</td>
+                                        <td>{{$datas->alamat}}</td>
+                                        <td>{{$datas->jenjang}}</td>
+                                        <td>{{$datas->status}}</td>
                                         <td>
-                                            <a href=""><button type="button" class="btn btn-primary btn-sm">Edit</button></a>
-                                            <button type="button" class="btn btn-danger btn-sm">Hapus</button>
+                                            <a href="{{url('/datasekolah/'.$datas->npsn)}}"><button type="button" class="btn btn-primary btn-sm">Edit</button></a>
+                                            <a onclick="return confirm('Data akan dihapus!')" href="{{url('/datasekolah/delete/'.$datas->npsn)}}"><button type="button" class="btn btn-danger btn-sm">Hapus</button></a>
                                         </td>
                                     </tr>
-                                    <tr>                
-                                        <td>Malas Ngoding</td>
-                                        <td>Bandung</td>
-                                        <td>Web Developer</td>
-                                        <td>26</td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary btn-sm">Edit</button>
-                                            <button type="button" class="btn btn-danger btn-sm">Hapus</button>
-                                        </td>
-                                    </tr>
-                                    <tr>                
-                                        <td>Malas Ngoding</td>
-                                        <td>Bandung</td>
-                                        <td>Web Developer</td>
-                                        <td>26</td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary btn-sm">Edit</button>
-                                            <button type="button" class="btn btn-danger btn-sm">Hapus</button>
-                                        </td>
-                                    </tr>
-                                    <tr>                
-                                        <td>Andi</td>
-                                        <td>Jakarta</td>
-                                        <td>Web Designer</td>
-                                        <td>21</td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary btn-sm">Edit</button>
-                                            <button type="button" class="btn btn-danger btn-sm">Hapus</button>
-                                        </td>
-                                    </tr>
-                                    <tr>                
-                                        <td>Andi</td>
-                                        <td>Jakarta</td>
-                                        <td>Web Designer</td>
-                                        <td>21</td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary btn-sm">Edit</button>
-                                            <button type="button" class="btn btn-danger btn-sm">Hapus</button>
-                                        </td>
-                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -140,24 +115,34 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="www.facebook.com" method="post">
+                <form action="{{url('/datasekolah')}}" method="post">
                     @csrf
                     <div class="position-relative form-group">
-                        <label for="exampleEmail" class="">Email</label>
-                        <input name="email" id="exampleEmail" placeholder="with a placeholder" type="email" class="form-control">
+                        <label class="">NPSN</label>
+                        <input name="npsn" type="number" placeholder="Masukkan NPSN" class="form-control" required="required">
                     </div>
                     <div class="position-relative form-group">
-                        <label for="examplePassword" class="">Password</label>
-                        <input name="password" id="examplePassword" placeholder="password placeholder" type="password" class="form-control">
+                        <label class="">Nama Sekolah</label>
+                        <input name="nama_sekolah" placeholder="Masukkan Nama Sekolah" type="text" class="form-control" required="required">
                     </div>
                     <div class="position-relative form-group">
-                        <label for="exampleSelect" class="">Select</label>
-                        <select name="select" id="exampleSelect" class="form-control">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                        <label class="">Alamat</label>
+                        <textarea name="alamat" class="form-control" required="required"></textarea>
+                    </div>
+                    <div class="position-relative form-group">
+                        <label class="">Jenjang Sekolah</label>
+                        <select name="jenjang" class="form-control" required="required">
+                            <option value="tk">TK</option>
+                            <option value="sd">SD</option>
+                            <option value="smp">SMP</option>
+                            <option value="sma">SMA</option>
+                        </select>
+                    </div>
+                    <div class="position-relative form-group">
+                        <label class="">Status Sekolah</label>
+                        <select name="status" class="form-control" required="required">
+                            <option value="negeri">Negeri</option>
+                            <option value="swasta">Swasta</option>
                         </select>
                     </div>
                 </div>

@@ -14,7 +14,11 @@ class DatasekolahController extends Controller
      */
     public function index()
     {
-        return view('page/semuasekolah');
+        $sekolah = Mdatasekolah::get();
+        $data = array(
+            'datasekolah' => $sekolah
+        );
+        return view('page/semuasekolah', $data);
     }
 
     /**
@@ -35,7 +39,9 @@ class DatasekolahController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Mdatasekolah::create($request->all());
+
+        return redirect('/datasekolah')->with('status', 'Data sekolah berhasil ditambahkan');
     }
 
     /**
@@ -44,9 +50,9 @@ class DatasekolahController extends Controller
      * @param  \App\Mdatasekolah  $mdatasekolah
      * @return \Illuminate\Http\Response
      */
-    public function show(Mdatasekolah $mdatasekolah)
+    public function show($npsn)
     {
-        //
+
     }
 
     /**
@@ -55,9 +61,19 @@ class DatasekolahController extends Controller
      * @param  \App\Mdatasekolah  $mdatasekolah
      * @return \Illuminate\Http\Response
      */
-    public function edit(Mdatasekolah $mdatasekolah)
+    public function edit($npsn)
     {
-        //
+        $sekolah = Mdatasekolah::where('npsn', $npsn)->get();
+
+        foreach ($sekolah as $s) {
+            $datas = json_decode($s, true);
+        }
+
+        $data = array(
+            'data' => $datas
+        );
+
+        return view('page/edit_sekolah', $data);
     }
 
     /**
@@ -67,9 +83,16 @@ class DatasekolahController extends Controller
      * @param  \App\Mdatasekolah  $mdatasekolah
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Mdatasekolah $mdatasekolah)
+    public function update(Request $request)
     {
-        //
+        Mdatasekolah::where('npsn', $request->npsn)->update([
+            'nama_sekolah' => $request->nama_sekolah,
+            'alamat' => $request->alamat,
+            'jenjang' => $request->jenjang,
+            'status' => $request->status
+        ]);
+        
+        return redirect('/datasekolah')->with('status', 'Data sekolah berhasil diubah');
     }
 
     /**
@@ -78,8 +101,10 @@ class DatasekolahController extends Controller
      * @param  \App\Mdatasekolah  $mdatasekolah
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Mdatasekolah $mdatasekolah)
+    public function destroy($npsn)
     {
-        //
+        Mdatasekolah::destroy('npsn', $npsn);
+        
+        return redirect('/datasekolah')->with('status', 'Data sekolah berhasil dihapus');
     }
 }

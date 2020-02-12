@@ -13,4 +13,9 @@
 
 // Dashboard
 Route::get('/', 'Home@index');
+// Data sekolah
 Route::get('/datasekolah', 'DatasekolahController@index');
+Route::post('/datasekolah', 'DatasekolahController@store');
+Route::get('/datasekolah/{npsn}', 'DatasekolahController@edit');
+Route::patch('/datasekolah', 'DatasekolahController@update');
+Route::get('/datasekolah/delete/{npsn}', 'DatasekolahController@destroy');
