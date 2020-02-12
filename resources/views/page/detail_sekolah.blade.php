@@ -12,7 +12,7 @@
                         </i>
                     </div>
                     <div>Data Sekolah
-                        <div class="page-title-subheading">Data Seluruh Sekolah / {{$jenjang}} / {{$status}}
+                        <div class="page-title-subheading">Daftar Sekolah {{strtoupper($jenjang)}} (sederajat) {{ucfirst($status)}}
                         </div>
                     </div>
                 </div> 
