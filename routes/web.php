@@ -13,3 +13,4 @@
 
 // Dashboard
 Route::get('/', 'Home@index');
+Route::get('/datasekolah', 'DatasekolahController@index');
