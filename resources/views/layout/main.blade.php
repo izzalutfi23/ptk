@@ -241,18 +241,20 @@
             <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
             <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+
+            
             <script>
-              $(function () {
-                $('#example1').DataTable()
-                $('#example2').DataTable({
-                  'paging'      : true,
-                  'lengthChange': false,
-                  'searching'   : false,
-                  'ordering'    : true,
-                  'info'        : true,
-                  'autoWidth'   : false
-              })
-            })
-        </script>
-    </body>
-    </html>
+                $(function () {
+                    $('#example1').DataTable()
+                    $('#example2').DataTable({
+                        'paging'      : true,
+                        'lengthChange': false,
+                        'searching'   : false,
+                        'ordering'    : true,
+                        'info'        : true,
+                        'autoWidth'   : false
+                    })
+                })
+            </script>
+        </body>
+        </html>
