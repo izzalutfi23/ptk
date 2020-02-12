@@ -22,16 +22,6 @@ class DatasekolahController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -50,9 +40,16 @@ class DatasekolahController extends Controller
      * @param  \App\Mdatasekolah  $mdatasekolah
      * @return \Illuminate\Http\Response
      */
-    public function show($npsn)
+    public function show($status, $jenjang)
     {
-
+        $datas = Mdatasekolah::where('status', $status)->where('jenjang', $jenjang)->get();
+        
+        $data = array(
+            'datasekolah' => $datas,
+            'status' => $status,
+            'jenjang' => $jenjang
+        );
+        return view('page/detail_sekolah', $data);
     }
 
     /**

@@ -148,25 +148,25 @@
                                         </a>
                                         <ul>
                                             <li>
-                                                <a href="#">
+                                                <a href="{{url('/sekolah/negeri/tk')}}" class="{{ (request()->segment(3) == 'tk' && request()->segment(2) == 'negeri') ? 'mm-active' : '' }}">
                                                     <i class="metismenu-icon"></i>
                                                     TK
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="{{url('/sekolah/negeri/sd')}}" class="{{ (request()->segment(3) == 'sd' && request()->segment(2) == 'negeri') ? 'mm-active' : '' }}">
                                                     <i class="metismenu-icon">
                                                     </i>SD
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="{{url('/sekolah/negeri/smp')}}" class="{{ (request()->segment(3) == 'smp' && request()->segment(2) == 'negeri') ? 'mm-active' : '' }}">
                                                     <i class="metismenu-icon">
                                                     </i>SMP
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="{{url('/sekolah/negeri/sma')}}" class="{{ (request()->segment(3) == 'sma' && request()->segment(2) == 'negeri') ? 'mm-active' : '' }}">
                                                     <i class="metismenu-icon">
                                                     </i>SMA
                                                 </a>
@@ -181,25 +181,25 @@
                                         </a>
                                         <ul>
                                             <li>
-                                                <a href="#">
+                                                <a href="{{url('/sekolah/swasta/tk')}}" class="{{ (request()->segment(3) == 'tk' && request()->segment(2) == 'swasta') ? 'mm-active' : '' }}">
                                                     <i class="metismenu-icon"></i>
                                                     TK
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="{{url('/sekolah/swasta/sd')}}" class="{{ (request()->segment(3) == 'sd' && request()->segment(2) == 'swasta') ? 'mm-active' : '' }}">
                                                     <i class="metismenu-icon">
                                                     </i>SD
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="{{url('/sekolah/swasta/smp')}}" class="{{ (request()->segment(3) == 'smp' && request()->segment(2) == 'swasta') ? 'mm-active' : '' }}">
                                                     <i class="metismenu-icon">
                                                     </i>SMP
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="{{url('/sekolah/swasta/sma')}}" class="{{ (request()->segment(3) == 'sma' && request()->segment(2) == 'swasta') ? 'mm-active' : '' }}">
                                                     <i class="metismenu-icon">
                                                     </i>SMA
                                                 </a>

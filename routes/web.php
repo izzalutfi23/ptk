@@ -19,3 +19,4 @@ Route::post('/datasekolah', 'DatasekolahController@store');
 Route::get('/datasekolah/{npsn}', 'DatasekolahController@edit');
 Route::patch('/datasekolah', 'DatasekolahController@update');
 Route::get('/datasekolah/delete/{npsn}', 'DatasekolahController@destroy');
+Route::get('/sekolah/{status}/{jenjang}', 'DatasekolahController@show');
