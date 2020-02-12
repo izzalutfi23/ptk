@@ -28,7 +28,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="main-card mb-3 card">
-                    <div class="card-header">Active Users</div>
+                    <div class="card-header">Data Sekolah</div>
                     <div class="table-responsive">
                         <div class="container" style="margin-top: 20px; margin-bottom: 20px;">
                             <table id="example1" class="table table-striped table-bordered data">
