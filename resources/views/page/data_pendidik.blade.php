@@ -1,5 +1,5 @@
 @extends('../layout/main')
-@section('title', 'Data Sekolah')
+@section('title', 'Data Pendidik | Aplikasi Data PTK')
 @section('container')
 
 <div class="app-main__outer">
@@ -8,16 +8,30 @@
             <div class="page-title-wrapper">
                 <div class="page-title-heading">
                     <div class="page-title-icon">
-                        <i class="pe-7s-study icon-gradient bg-mean-fruit">
+                        <i class="pe-7s-users icon-gradient bg-mean-fruit">
                         </i>
                     </div>
-                    <div>Data Sekolah
-                        <div class="page-title-subheading">Daftar Sekolah {{strtoupper($jenjang)}} {{ucfirst($status)}}
+                    <div>Data Pendidik
+                        <div class="page-title-subheading">Data Seluruh Pendidik.
                         </div>
                     </div>
                 </div> 
+                <div class="page-title-actions">
+                    <div class="d-inline-block dropdown">
+                        <button type="button" class="btn-shadow btn btn-info" data-toggle="modal" data-target="#tambahdatasekolah"><i class="fa fa-plus"></i> Data Sekolah</button>
+                    </div>
+                </div>   
             </div>
         </div>
+
+        @if (session('status'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Berhasil!</strong> {{session('status')}}.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        @endif
 
         <!-- Table -->
         <div class="row">
@@ -33,21 +47,15 @@
                                         <th>NPSN</th>
                                         <th>Nama Sekolah</th>
                                         <th>Alamat</th>
+                                        <th>Desa/Kelurahan</th>
+                                        <th>Kecamatan</th>
                                         <th>Jenjang</th>
                                         <th>Status</th>
+                                        <th width="13%">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($datasekolah as $datas)
-                                    <tr>                
-                                        <td>{{$loop->iteration}}</td>
-                                        <td>{{$datas->npsn}}</td>
-                                        <td>{{$datas->nama_sekolah}}</td>
-                                        <td>{{$datas->alamat}}</td>
-                                        <td>{{$datas->jenjang}}</td>
-                                        <td>{{$datas->status}}</td>
-                                    </tr>
-                                    @endforeach
+                                    
                                 </tbody>
                             </table>
                         </div>

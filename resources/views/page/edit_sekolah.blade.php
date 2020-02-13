@@ -43,6 +43,15 @@
                                     <textarea class="form-control" name="alamat">{{$data['alamat']}}</textarea>
                                 </div>
                                 <div class="position-relative form-group">
+                                    <label class="">Desa/Kelurahan</label>
+                                    <input name="desa" value="{{$data['desa']}}" type="text" class="form-control" required="required">
+
+                                </div>
+                                <div class="position-relative form-group">
+                                    <label class="">Kecamatan</label>
+                                    <input name="kecamatan" value="{{$data['kecamatan']}}" type="text" class="form-control" required="required">
+                                </div>
+                                <div class="position-relative form-group">
                                     <label class="">Jenjang Sekolah</label>
                                     <select name="jenjang" class="form-control" required="required">
                                         <option value="tk" @if($data['jenjang'] == "tk") selected="selected" @endif>TK</option>

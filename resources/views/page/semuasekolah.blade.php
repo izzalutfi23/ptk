@@ -47,9 +47,11 @@
                                         <th>NPSN</th>
                                         <th>Nama Sekolah</th>
                                         <th>Alamat</th>
+                                        <th>Desa/Kelurahan</th>
+                                        <th>Kecamatan</th>
                                         <th>Jenjang</th>
                                         <th>Status</th>
-                                        <th>Aksi</th>
+                                        <th width="13%">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -59,9 +61,11 @@
                                         <td>{{$datas->npsn}}</td>
                                         <td>{{$datas->nama_sekolah}}</td>
                                         <td>{{$datas->alamat}}</td>
+                                        <td>{{$datas->desa}}</td>
+                                        <td>{{$datas->kecamatan}}</td>
                                         <td>{{$datas->jenjang}}</td>
                                         <td>{{$datas->status}}</td>
-                                        <td>
+                                        <td width="13%">
                                             <a href="{{url('/datasekolah/'.$datas->npsn)}}"><button type="button" class="btn btn-primary btn-sm">Edit</button></a>
                                             <a onclick="return confirm('Data akan dihapus!')" href="{{url('/datasekolah/delete/'.$datas->npsn)}}"><button type="button" class="btn btn-danger btn-sm">Hapus</button></a>
                                         </td>
@@ -130,19 +134,28 @@
                         <textarea name="alamat" class="form-control" required="required"></textarea>
                     </div>
                     <div class="position-relative form-group">
-                        <label class="">Jenjang Sekolah</label>
-                        <select name="jenjang" class="form-control" required="required">
-                            <option value="tk">TK</option>
-                            <option value="sd">SD</option>
-                            <option value="smp">SMP</option>
-                            <option value="sma">SMA</option>
-                        </select>
+                        <label class="">Desa/Kelurahan</label>
+                        <input name="desa" placeholder="Masukkan Nama Desa/kelurahan" type="text" class="form-control" required="required">
+                        
+                    </div>
+                    <div class="position-relative form-group">
+                        <label class="">Kecamatan</label>
+                        <input name="kecamatan" placeholder="Masukkan Nama Kecamatan" type="text" class="form-control" required="required">
                     </div>
                     <div class="position-relative form-group">
                         <label class="">Status Sekolah</label>
                         <select name="status" class="form-control" required="required">
-                            <option value="negeri">Negeri</option>
-                            <option value="swasta">Swasta</option>
+                            <option value="NEGERI">Negeri</option>
+                            <option value="SWASTA">Swasta</option>
+                        </select>
+                    </div>
+                    <div class="position-relative form-group">
+                        <label class="">Jenjang Sekolah</label>
+                        <select name="jenjang" class="form-control" required="required">
+                            <option value="TK">TK</option>
+                            <option value="SD">SD</option>
+                            <option value="SMP">SMP</option>
+                            <option value="SMA">SMA</option>
                         </select>
                     </div>
                 </div>

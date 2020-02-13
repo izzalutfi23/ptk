@@ -85,6 +85,8 @@ class DatasekolahController extends Controller
         Mdatasekolah::where('npsn', $request->npsn)->update([
             'nama_sekolah' => $request->nama_sekolah,
             'alamat' => $request->alamat,
+            'desa' => $request->desa,
+            'kecamatan' => $request->kecamatan,
             'jenjang' => $request->jenjang,
             'status' => $request->status
         ]);
