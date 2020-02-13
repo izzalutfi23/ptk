@@ -23,3 +23,9 @@ Route::get('/sekolah/{status}/{jenjang}', 'DatasekolahController@show');
 
 // Data Pendidik
 Route::get('/datapendidik', 'DatapendidikController@index');
+Route::get('/datapendidik/tambah', 'DatapendidikController@create');
+Route::post('/datapendidik', 'DatapendidikController@store');
+Route::get('/datapendidik/{nik}', 'DatapendidikController@show');
+Route::get('/datapendidik/edit/{nik}', 'DatapendidikController@edit');
+Route::patch('/datapendidik', 'DatapendidikController@update');
+Route::get('/datapendidik/delete/{nik}', 'DatapendidikController@destroy');

@@ -18,9 +18,9 @@
                 </div> 
                 <div class="page-title-actions">
                     <div class="d-inline-block dropdown">
-                        <button type="button" class="btn-shadow btn btn-info" data-toggle="modal" data-target="#tambahdatasekolah"><i class="fa fa-plus"></i> Data Sekolah</button>
+                        <a href="{{url('/datapendidik/tambah')}}"><button type="button" class="btn-shadow btn btn-info"><i class="fa fa-plus"></i> Data Sekolah</button></a>
                     </div>
-                </div>   
+                </div>
             </div>
         </div>
 
@@ -44,18 +44,32 @@
                                 <thead>
                                     <tr>            
                                         <th>No</th>
-                                        <th>NPSN</th>
-                                        <th>Nama Sekolah</th>
-                                        <th>Alamat</th>
-                                        <th>Desa/Kelurahan</th>
-                                        <th>Kecamatan</th>
-                                        <th>Jenjang</th>
-                                        <th>Status</th>
-                                        <th width="13%">Aksi</th>
+                                        <th>NIK</th>
+                                        <th>Nama Lengkap</th>
+                                        <th>Tgl Lahir</th>
+                                        <th>Jenis Kel</th>
+                                        <th>NPWP</th>
+                                        <th>Email</th>
+                                        <th width="25%">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    
+                                    @foreach($pendidik as $data)
+                                    <tr>                
+                                        <td>{{$loop->iteration}}</td>
+                                        <td>{{$data->nik}}</td>
+                                        <td>{{$data->nama_lengkap}}</td>
+                                        <td>{{$data->tgl_lahir}}</td>
+                                        <td>{{$data->j_kel}}</td>
+                                        <td>{{$data->npwp}}</td>
+                                        <td>{{$data->email}}</td>
+                                        <td width="25%">
+                                            <a href="{{url('/datapendidik/'.$data->nik)}}"><button type="button" class="btn btn-success btn-sm">Detail</button></a>
+                                            <a href="{{url('/datapendidik/edit/'.$data->nik)}}"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button></a>
+                                            <a onclick="return confirm('Data akan dihapus!')" href="{{url('/datapendidik/delete/'.$data->nik)}}"><button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
