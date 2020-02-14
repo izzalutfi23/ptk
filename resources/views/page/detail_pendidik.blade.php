@@ -151,7 +151,7 @@
                                             <div class="card-body"><h5 class="card-title">Khusus PNS</h5>
                                                 <div class="position-relative form-group">
                                                     <label class="">NIP</label>
-                                                    <input readonly="readonly" name="nip" type="text" value="{{$data->kecamatan}}nip" class="form-control" required="required">
+                                                    <input readonly="readonly" name="nip" type="text" value="{{$data->nip}}" class="form-control" required="required">
                                                 </div>
                                                 <div class="position-relative form-group">
                                                     <label class="">Golongan</label>

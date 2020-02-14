@@ -23,7 +23,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="main-card mb-3 card">
-                    <div class="card-header">Edit Data Pendidik</div>
+                    <div class="card-header">Edit Data Pendidik (jika kosong isi dengan strip)</div>
                     <div class="table-responsive">
                         <div class="container" style="margin-top: 20px; margin-bottom: 20px;">
                             @foreach($datapendidik as $data)
@@ -152,7 +152,7 @@
                                             <div class="card-body"><h5 class="card-title">Khusus PNS</h5>
                                                 <div class="position-relative form-group">
                                                     <label class="">NIP</label>
-                                                    <input name="nip" type="text" value="{{$data->kecamatan}}nip" class="form-control" required="required">
+                                                    <input name="nip" type="text" value="{{$data->nip}}" class="form-control" required="required">
                                                 </div>
                                                 <div class="position-relative form-group">
                                                     <label class="">Golongan</label>
@@ -292,7 +292,6 @@
     <!-- End footer -->
 
 </div>
-<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
 </div>
 </div>
 @endsection()

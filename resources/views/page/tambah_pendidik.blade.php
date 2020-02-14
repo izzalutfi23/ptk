@@ -23,7 +23,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="main-card mb-3 card">
-                    <div class="card-header">Tambah Data Pendidik</div>
+                    <div class="card-header">Tambah Data Pendidik (jika kosong isi dengan strip)</div>
                     <div class="table-responsive">
                         <div class="container" style="margin-top: 20px; margin-bottom: 20px;">
                             <form action="{{url('/datapendidik')}}" method="post">

@@ -14,7 +14,7 @@ class CreatePendidikTable extends Migration
     public function up()
     {
         Schema::create('pendidik', function (Blueprint $table) {
-            $table->bigIncrements('nik');
+            $table->string('nik',20);
             $table->string('gelar_depan', 15);
             $table->string('nama_lengkap', 50);
             $table->string('nuptk',20);

@@ -12,12 +12,15 @@ class DatapendidikController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Mdatapendidik $pendidik)
     {
         $pendidik = Mdatapendidik::all();
         $data = array(
             'pendidik' => $pendidik
         );
+        // var_dump($data);
+        // return;
+        //dd($data);
         return view('/page/data_pendidik', $data);
     }
 
