@@ -18,7 +18,7 @@
                 </div> 
                 <div class="page-title-actions">
                     <div class="d-inline-block dropdown">
-                        <a href="{{url('/datapendidik/tambah')}}"><button type="button" class="btn-shadow btn btn-info"><i class="fa fa-plus"></i> Data Sekolah</button></a>
+                        <a href="{{url('/datapendidik/tambah')}}"><button type="button" class="btn-shadow btn btn-info"><i class="fa fa-plus"></i> Data Pendidik</button></a>
                     </div>
                 </div>
             </div>
