@@ -54,17 +54,17 @@
                                 <div class="position-relative form-group">
                                     <label class="">Jenjang Sekolah</label>
                                     <select name="jenjang" class="form-control" required="required">
-                                        <option value="tk" @if($data['jenjang'] == "tk") selected="selected" @endif>TK</option>
-                                        <option value="sd" @if($data['jenjang'] == "sd") selected="selected" @endif>SD</option>
-                                        <option value="smp" @if($data['jenjang'] == "smp") selected="selected" @endif>SMP</option>
-                                        <option value="sma" @if($data['jenjang'] == "sma") selected="selected" @endif>SMA</option>
+                                        <option value="tk" @if($data['jenjang'] == "TK") selected="selected" @endif>TK</option>
+                                        <option value="sd" @if($data['jenjang'] == "SD") selected="selected" @endif>SD</option>
+                                        <option value="smp" @if($data['jenjang'] == "SMP") selected="selected" @endif>SMP</option>
+                                        <option value="sma" @if($data['jenjang'] == "SMA") selected="selected" @endif>SMA</option>
                                     </select>
                                 </div>
                                 <div class="position-relative form-group">
                                     <label class="">Status Sekolah</label>
                                     <select name="status" class="form-control" required="required">
-                                        <option value="negeri" @if($data['status'] == "negeri") selected="selected" @endif>Negeri</option>
-                                        <option value="swasta" @if($data['status'] == "swasta") selected="selected" @endif>Swasta</option>
+                                        <option value="negeri" @if($data['status'] == "NEGERI") selected="selected" @endif>Negeri</option>
+                                        <option value="swasta" @if($data['status'] == "SWASTA") selected="selected" @endif>Swasta</option>
                                     </select>
                                 </div>
 
